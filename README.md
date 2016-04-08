@@ -1,6 +1,6 @@
 
 
-**ntroduction to Big Data Analytics using Apache Spark on HDInsights on Azure (SaaS) and/or HDP on Azure(PaaS)** 
+**Introduction to Big Data Analytics using Apache Spark on HDInsights on Azure (SaaS) and/or HDP on Azure(PaaS)** 
 
 This workshop will provide an introduction to Big Data Analytics using Apache Spark using the HDInsights on Azure (SaaS) and/or HDP deployment on Azure(PaaS) . There will be a short lecture that includes an introduction to Spark, the Spark components.
 
@@ -53,36 +53,15 @@ https://github.com/HortonworksUniversity/Essentials/blob/master/demos/SandboxSet
     Ambari Server 'start' completed successfully.
     It is suggested that you set the admin Ambari user's password to admin for consistency with the other web UIs.
 
-2) for the MEETUP lab, you will need to download datasets: Switch from root to zeppelin user. 
+2) 
 
-    sudo su - zeppelin
-    
-    #################################################
-    #FOR PHILLY CRIME DATA Analysis
-    #################################################
-    
-    wget https://raw.githubusercontent.com/zeltovhorton/sparkworkshop/master/data/philadelphia-crime-data-2015-ytd.csv
-    ls
-    pwd
-    hadoop fs -mkdir /user/zeppelin/crime
-    hadoop fs -put philadelphia-crime-data-2015-ytd.csv /user/zeppelin/crime/
-    hadoop fs -ls /user/zeppelin
-    hadoop fs -ls /user/zeppelin/crime
-    #################################################
-    
-    
-    #################################################
-    # FOR SENSOR DEMO
-    #################################################
-    
-    wget http://s3.amazonaws.com/hw-sandbox/tutorial14/SensorFiles.zip
-    unzip SensorFiles.zip
-    hadoop fs -mkdir -p /user/zeppelin/SensorDemo
-    hadoop fs -copyFromLocal -f SensorFiles/HVAC.csv /user/zeppelin/SensorDemo/
-    hadoop fs -tail /user/zeppelin/SensorDemo/HVAC.csv
+Open the webbrowser and go to http://sandbox:9995/#/ or the Azure HDP deployment where zeppelin is located:
+
+Click: Import Notebook
+
+Give Notebook Name: Philly Crime Data Analysis
+
+And choose Add from URL :  
+https://raw.githubusercontent.com/zeltovhorton/microsoft_codecamp/master/phillyCrimeAnalysis.json
 
 
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
