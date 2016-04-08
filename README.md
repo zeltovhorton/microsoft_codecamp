@@ -55,41 +55,6 @@ https://github.com/HortonworksUniversity/Essentials/blob/master/demos/SandboxSet
     hadoop fs -ls /user/zeppelin/crime
     #################################################
     
-    #FOR RECOMMENDATION ENGINE example
-    
-    dataset="http://files.grouplens.org/datasets/movielens/ml-1m.zip"
-    
-    #dataset="http://files.grouplens.org/datasets/movielens/ml-10m.zip"
-    #dataset="http://files.grouplens.org/datasets/movielens/ml-20m.zip"
-    
-    
-    #################################################
-    # The rest of this note should not be modified. #
-    #################################################
-    
-    #Get the dataset
-    
-    echo ""
-    rm -rf movielens
-    hadoop fs -rm -r -f /user/zeppelin/movielens/
-    
-    
-    mkdir movielens
-    cd movielens
-    wget $dataset -o /dev/null -O ml.zip
-    unzip ml.zip
-    rm ml.zip
-    mv ml* ml
-    gzip ml/ratings.dat
-    
-    # Move the required files to HDFS
-    
-    hadoop fs -mkdir /user/zeppelin/movielens
-    hadoop fs -put ml/movies.dat /user/zeppelin/movielens/movies.dat
-    hadoop fs -put ml/ratings.dat.gz /user/zeppelin/movielens/ratings.dat.gz
-    
-    echo "Files in HDFS:/user/zeppelin/movielens"
-    hadoop fs -ls /user/zeppelin/movielens
     
     #################################################
     # FOR SENSOR DEMO
